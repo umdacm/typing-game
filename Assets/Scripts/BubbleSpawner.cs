@@ -5,6 +5,7 @@ using UnityEngine;
 public class BubbleSpawner : MonoBehaviour {
     public float minx, maxx, miny, maxy;
     public GameObject bubble;
+    public NameGen nameText = new NameGen();
     [Range(0, 1)]
     public float spawnRate;
 
@@ -31,8 +32,10 @@ public class BubbleSpawner : MonoBehaviour {
 
         // If the spawn timers is greater than or equal to 1 
         // then we spawn a bubble and reset the timer
-        if (spawnTimer >= 1)
-        {
+        if (spawnTimer >= 1) {
+        
+            bubble.GetComponentInChildren<TextMesh>().text = nameText.GetName();
+
             Instantiate(bubble, new Vector2(Random.Range(minx, maxx), Random.Range(miny, maxy)), Quaternion.identity, transform);
             spawnTimer = 0;
         }
