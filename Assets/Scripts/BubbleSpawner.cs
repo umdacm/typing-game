@@ -38,8 +38,7 @@ public class BubbleSpawner : MonoBehaviour {
         
             bubble.GetComponentInChildren<TextMesh>().text = nameText.GetName();
 
-            Instantiate(bubble, new Vector2(Random.Range(minx, maxx), Random.Range(miny, maxy)), Quaternion.identity, transform);
-            bubble.AddComponent<Rigidbody2D>();
+            Instantiate(bubble, new Vector2(transform.position.x + Random.Range(minx, maxx), transform.position.y + Random.Range(miny, maxy)), Quaternion.identity, transform);
             spawnTimer = 0;
         }
         // Otherwise we add spawnRate to spawnTimer
