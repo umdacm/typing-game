@@ -7,14 +7,16 @@ public class BubbleSpawner : MonoBehaviour {
     public GameObject bubble;
     public NameGen nameText = new NameGen();
     [Range(0, 1)]
-    public float spawnRate;
+    //We should probably limit this to between 0.01 and 0.05
+    public float spawnRate = 0.02f;  
 
     private float spawnTimer = 0;
 
-
 	// Use this for initialization
 	void Start () {
-		
+
+        
+
 	}
 	
 	// Update is called once per frame
@@ -37,6 +39,7 @@ public class BubbleSpawner : MonoBehaviour {
             bubble.GetComponentInChildren<TextMesh>().text = nameText.GetName();
 
             Instantiate(bubble, new Vector2(Random.Range(minx, maxx), Random.Range(miny, maxy)), Quaternion.identity, transform);
+            bubble.AddComponent<Rigidbody2D>();
             spawnTimer = 0;
         }
         // Otherwise we add spawnRate to spawnTimer
@@ -45,4 +48,7 @@ public class BubbleSpawner : MonoBehaviour {
             spawnTimer += spawnRate;
         }
     }
+
+    // TODO Add a function that despawns the bubbles.
+
 }

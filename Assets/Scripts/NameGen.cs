@@ -1,6 +1,13 @@
 using System.IO;
+using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
+
 
 public class NameGen {
+
+    private string curName;
+    private List<string> namesInUse = new List<string>();
 
     // Create a System.Random object rand
     public System.Random rand = new System.Random();
@@ -10,21 +17,24 @@ public class NameGen {
 
     // returns a random name
     public string GetName() {
-
-        return lines[rand.Next(lines.Length)];
+        curName = lines[rand.Next(lines.Length)];
+        NamesInUse(); // this is mostly just testing the function
+        return curName;
 
     }
 
     public void NamesInUse() {
-
-        // STUB
-
-    }
+       
+        if (!namesInUse.Contains(curName))
+        {
+            namesInUse.Add(curName);
+        }
+        
+    } 
 
     public bool CheckInput(string name){
 
-        // STUB
-        return false;
+        return namesInUse.Contains(name);
 
     }
 }

@@ -222,7 +222,7 @@ MonoBehaviour:
   miny: -2
   maxy: 2
   bubble: {fileID: 1923463953874474, guid: 03593a2c81f96eb40915ceee71dfdd40, type: 2}
-  spawnRate: 0.01
+  spawnRate: 0.046
 --- !u!4 &2138736218
 Transform:
   m_ObjectHideFlags: 0
