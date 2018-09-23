@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 212987471899693032}
   - component: {fileID: 50128329357706558}
   - component: {fileID: 61925760875490352}
+  - component: {fileID: 114292309934528582}
   m_Layer: 8
   m_Name: bubble
   m_TagString: Untagged
@@ -146,7 +147,7 @@ TextMesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1317272429716550}
-  m_Text: Melodie
+  m_Text: Elsy
   m_OffsetZ: -0.01
   m_CharacterSize: 0.1
   m_LineSpacing: 1
@@ -160,6 +161,18 @@ TextMesh:
   m_Color:
     serializedVersion: 2
     rgba: 4278190080
+--- !u!114 &114292309934528582
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1923463953874474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77fe6cee9a01abf43a2899d0447ac8fa, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  textSoFar:
 --- !u!212 &212987471899693032
 SpriteRenderer:
   m_ObjectHideFlags: 1
