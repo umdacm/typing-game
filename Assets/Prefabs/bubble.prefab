@@ -170,9 +170,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 77fe6cee9a01abf43a2899d0447ac8fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textSoFar: 
+  m_Name:
+  m_EditorClassIdentifier:
+  textSoFar:
 --- !u!212 &212987471899693032
 SpriteRenderer:
   m_ObjectHideFlags: 1
