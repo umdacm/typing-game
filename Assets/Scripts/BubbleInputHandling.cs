@@ -6,6 +6,7 @@ public class BubbleInputHandling : MonoBehaviour {
     // This is public only so we can observe it from the editor
     // This probably shouldn't be edited from the editor
     public string textSoFar = "";
+    public Color typedTextColor;
 
     private string text;
     
@@ -38,6 +39,8 @@ public class BubbleInputHandling : MonoBehaviour {
             if (real_char == text[textSoFar.Length])
             {
                 textSoFar += real_char;
+                string notTyped = text.Substring(textSoFar.Length);
+                ChangeText(textSoFar, notTyped);
                 if (TextIsCompleted())
                 {
                     TextComplete();
@@ -47,9 +50,19 @@ public class BubbleInputHandling : MonoBehaviour {
             else
             {
                 textSoFar = "";
+                ChangeText("", text);
             }
 
         }
+    }
+
+    void ChangeText(string typedText, string notTypedText)
+    {
+        string htmlColor = ColorUtility.ToHtmlStringRGBA(typedTextColor);
+        string newText = "";
+        // Format the rich text for the colored text
+        newText += "<color=#" + htmlColor + ">" + typedText + "</color>" + notTypedText;
+        GetComponentInChildren<TextMesh>().text = newText;
     }
 
     void TextComplete()
