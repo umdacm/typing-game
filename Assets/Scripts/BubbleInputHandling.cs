@@ -68,7 +68,7 @@ public class BubbleInputHandling : MonoBehaviour {
     void TextComplete()
     {
         // This is where we would put things that happen when a bubble is typed correctly
-        Destroy(gameObject);
+        Destroy(transform.parent.gameObject);
     }
 
     bool TextIsCompleted()

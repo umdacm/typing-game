@@ -14,7 +14,7 @@ public class KillPlane : MonoBehaviour {
 		
 	}
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter(Collision collision)
     {
         Destroy(collision.gameObject);
         // Here is where we would add something that takes away a life or points
