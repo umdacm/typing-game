@@ -4,44 +4,33 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour {
     public float minx, maxx, miny, maxy;
-    public GameObject bubble;
-    [Range(0, 1)]
+    public GameObject spawnedObj;
+    [Range(0, 10)]
     //We should probably limit this to between 0.01 and 0.05
-    public float spawnRate = 0.02f;  
+    public float spawnTimer;
 
-    private float spawnTimer = 0;
+    private bool routineRunning = false;
 
 	// Use this for initialization
 	void Start () {
-
-        
 
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
-        TrySpawn();
-
+        if (!routineRunning)
+        {
+            StartCoroutine(Spawn(spawnTimer));
+        }
 	}
 
-    // This function will spawn a bubble within the bounds of minx,maxx,miny,maxy if it is time to do so
-    // The way this function is set up it should make spawnRate act as a linear scale
-    // between spawning never and spawning every single frame
-    void TrySpawn()
+    // Spawns the object after a certain amount of time
+    IEnumerator Spawn(float time)
     {
-
-        // If the spawn timers is greater than or equal to 1 
-        // then we spawn a bubble and reset the timer
-        if (spawnTimer >= 1) {
-            Instantiate(bubble, new Vector3(transform.position.x + Random.Range(minx, maxx), transform.position.y + Random.Range(miny, maxy), transform.position.z), Quaternion.identity, transform);
-            spawnTimer = 0;
-        }
-        // Otherwise we add spawnRate to spawnTimer
-        else
-        {
-            spawnTimer += spawnRate;
-        }
+        routineRunning = true;
+        yield return new WaitForSeconds(time);
+        Instantiate(spawnedObj, new Vector3(transform.position.x + Random.Range(minx, maxx), transform.position.y + Random.Range(miny, maxy), transform.position.z), Quaternion.identity, transform);
+        routineRunning = false;
     }
 
     // TODO Add a function that despawns the bubbles.

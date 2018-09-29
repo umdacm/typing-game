@@ -271,12 +271,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d66296d11478f440b5675238bfaad90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minx: -2
-  maxx: 2
+  minx: -15
+  maxx: 15
   miny: -2
   maxy: 2
-  bubble: {fileID: 1643101361192562, guid: da6026d07b56e274c80c9c4e59f1b447, type: 2}
-  spawnRate: 0.01
+  spawnedObj: {fileID: 1643101361192562, guid: da6026d07b56e274c80c9c4e59f1b447, type: 2}
+  spawnTimer: 2.39
 --- !u!4 &2138736218
 Transform:
   m_ObjectHideFlags: 0
