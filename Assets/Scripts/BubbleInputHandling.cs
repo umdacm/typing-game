@@ -68,6 +68,7 @@ public class BubbleInputHandling : MonoBehaviour {
     void TextComplete()
     {
         // This is where we would put things that happen when a bubble is typed correctly
+        ScoreCounting.ScoreValue += 10;
         Destroy(transform.parent.gameObject);
     }
 
