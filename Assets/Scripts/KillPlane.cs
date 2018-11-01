@@ -17,6 +17,7 @@ public class KillPlane : MonoBehaviour {
     private void OnCollisionEnter(Collision collision)
     {
         Destroy(collision.gameObject);
+        ScoreCounting.ScoreValue -= 10;
         // Here is where we would add something that takes away a life or points
         // or something bad that happens when you miss a bubble
     }
